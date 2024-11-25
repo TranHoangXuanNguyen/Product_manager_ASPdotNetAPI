@@ -8,8 +8,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "product",
-        "Type": "ProductRepository.Entities.ProductEntity",
+        "Name": "request",
+        "Type": "ProductService.Models.CreateProductDTO",
         "IsRequired": true
       }
     ],
@@ -25,7 +25,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[ProductRepository.Entities.ProductEntity, ProductRepository, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ProductService.Models.ProductDTO, ProductService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -51,7 +51,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "ProductRepository.Entities.ProductEntity",
+        "Type": "ProductService.Models.ProductDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -75,8 +75,8 @@
         "IsRequired": true
       },
       {
-        "Name": "product",
-        "Type": "ProductRepository.Entities.ProductEntity",
+        "Name": "request",
+        "Type": "ProductService.Models.GetProductDTO",
         "IsRequired": true
       }
     ],

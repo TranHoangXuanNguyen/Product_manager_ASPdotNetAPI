@@ -12,7 +12,7 @@ using ProductRepository;
 namespace ProductRepository.Migrations
 {
     [DbContext(typeof(ProductDBContext))]
-    [Migration("20241111055123_InitialCreate")]
+    [Migration("20241117031723_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />

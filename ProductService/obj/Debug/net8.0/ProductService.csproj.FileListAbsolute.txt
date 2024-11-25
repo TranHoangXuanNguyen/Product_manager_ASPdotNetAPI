@@ -13,3 +13,4 @@ E:\Code\C#\ProductManager\ProductManager\ProductService\obj\Debug\net8.0\Product
 E:\Code\C#\ProductManager\ProductManager\ProductService\obj\Debug\net8.0\refint\ProductService.dll
 E:\Code\C#\ProductManager\ProductManager\ProductService\obj\Debug\net8.0\ProductService.pdb
 E:\Code\C#\ProductManager\ProductManager\ProductService\obj\Debug\net8.0\ref\ProductService.dll
+E:\Code\C#\ProductManager\ProductManager\ProductService\obj\Debug\net8.0\ProductService.sourcelink.json

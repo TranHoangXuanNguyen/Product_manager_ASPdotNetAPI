@@ -1,4 +1,5 @@
 ﻿using ProductRepository.Entities;
+using ProductService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,10 +10,10 @@ namespace ProductService.Interfaces
 {
     public interface IProductService
     {
-        Task CreateProductAsync(ProductEntity product);
-        Task<List<ProductEntity>> GetAllProductsAsync();
-        Task<ProductEntity> GetProductByIdAsync(int id);
-        Task UpdateProductAsync(ProductEntity product);
-        Task DeleteProductAsync(int id);
+        Task<long> CreateProductAsync(CreateProductDTO product);
+        Task<List<ProductDTO>> GetAllProductsAsync();
+        Task<GetProductDTO> GetProductByIdAsync(int id);
+        Task UpdateProductAsync(GetProductDTO product);
+        Task DeleteProductAsync(int id); 
     }
 }

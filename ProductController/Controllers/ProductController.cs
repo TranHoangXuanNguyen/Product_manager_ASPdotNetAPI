@@ -4,6 +4,7 @@ using ProductRepository.Entities;
 using ProductService.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProductService.Models;
 
 namespace YourWebApi.Controllers
 {
@@ -20,20 +21,21 @@ namespace YourWebApi.Controllers
 
         // POST: api/product
         [HttpPost]
-        public async Task<IActionResult> CreateProduct([FromBody] ProductEntity product)
+        public async Task<IActionResult> CreateProduct([FromBody] CreateProductDTO request)
         {
-            if (product == null || string.IsNullOrWhiteSpace(product.Name) || product.Price <= 0)
+            if (request == null || string.IsNullOrWhiteSpace(request.Name) || request.Price <= 0)
             {
                 return BadRequest("Invalid product data.");
             }
 
-            await _productService.CreateProductAsync(product);
-            return CreatedAtAction(nameof(GetProductById), new { id = product.Id }, product);  // Return created product with 201 status
+            var newid = await _productService.CreateProductAsync(request);
+
+            return Ok(newid);  // Return created product with id
         }
 
         // GET: api/product
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductEntity>>> GetAllProducts()
+        public async Task<ActionResult<IEnumerable<ProductDTO>>> GetAllProducts()
         {
             var products = await _productService.GetAllProductsAsync();  // Assuming a method to get all products
             if (products == null || products.Count == 0)
@@ -45,7 +47,7 @@ namespace YourWebApi.Controllers
 
         // GET: api/product/{id}
         [HttpGet("{id}")]
-        public async Task<ActionResult<ProductEntity>> GetProductById(int id)
+        public async Task<ActionResult<ProductDTO>> GetProductById(int id)
         {
             var product = await _productService.GetProductByIdAsync(id);  // Assuming a method to get product by ID
             if (product == null)
@@ -57,12 +59,8 @@ namespace YourWebApi.Controllers
 
         // PUT: api/product/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] ProductEntity product)
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] GetProductDTO request)
         {
-            if (product == null || id != product.Id)
-            {
-                return BadRequest("Product ID mismatch.");
-            }
             // Tìm sản phẩm trong cơ sở dữ liệu
             var existingProduct = await _productService.GetProductByIdAsync(id);
             if (existingProduct == null)
@@ -71,9 +69,9 @@ namespace YourWebApi.Controllers
             }
 
             // Cập nhật các trường dữ liệu của sản phẩm
-            existingProduct.Name = product.Name;
-            existingProduct.Description = product.Description;
-            existingProduct.Price = product.Price;
+            existingProduct.Name = request.Name;
+            existingProduct.Description = request.Description;
+            existingProduct.Price = request.Price;
             existingProduct.UpdatedTime = DateTime.UtcNow; // Cập nhật thời gian sửa
 
             // Lưu thay đổi vào cơ sở dữ liệu

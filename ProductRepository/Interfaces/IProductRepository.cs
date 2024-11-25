@@ -9,7 +9,7 @@ namespace ProductRepository.Interfaces
 {
     public interface IProductRepository
     {
-        Task AddProductAsync(ProductEntity productEntity);
+        Task<long> AddProductAsync(ProductEntity productEntity);
         Task<List<ProductEntity>> GetAllProductsAsync();
         Task<ProductEntity> GetProductByIdAsync(int id);
         Task UpdateProductAsync(ProductEntity product);

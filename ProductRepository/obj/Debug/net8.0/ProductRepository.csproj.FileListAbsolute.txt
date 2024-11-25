@@ -12,3 +12,4 @@ E:\Code\C#\ProductManager\ProductManager\ProductRepository\obj\Debug\net8.0\ref\
 E:\Code\C#\ProductManager\ProductManager\ProductRepository\bin\Debug\net8.0\ProductRepository.runtimeconfig.json
 E:\Code\C#\ProductManager\ProductManager\ProductRepository\obj\Debug\net8.0\ProductRepository.csproj.AssemblyReference.cache
 E:\Code\C#\ProductManager\ProductManager\ProductRepository\obj\Debug\net8.0\ProductRepository.genruntimeconfig.cache
+E:\Code\C#\ProductManager\ProductManager\ProductRepository\obj\Debug\net8.0\ProductRepository.sourcelink.json

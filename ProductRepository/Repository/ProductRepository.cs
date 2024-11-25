@@ -18,10 +18,11 @@ namespace ProductRepository.Repository
             _context = context;
         }
 
-        public async Task AddProductAsync(ProductEntity product)
+        public async Task<long> AddProductAsync(ProductEntity product)
         {
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
+            return product.Id;
         }
 
         public async Task<List<ProductEntity>> GetAllProductsAsync()
@@ -30,8 +31,12 @@ namespace ProductRepository.Repository
         }
 
         public async Task<ProductEntity> GetProductByIdAsync(int id)
-        {
-            return await _context.Products.FindAsync(id);
+        {   
+            var productEntityResult = await _context.Products.FindAsync(id);
+            if (productEntityResult == null) {
+                throw new KeyNotFoundException($"Product with ID {id} was not found.");
+            }
+            return productEntityResult;
         }
 
         public async Task UpdateProductAsync(ProductEntity product)
