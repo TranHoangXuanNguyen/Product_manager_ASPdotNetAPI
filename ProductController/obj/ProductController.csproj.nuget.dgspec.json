@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj": {}
+    "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj": {}
   },
   "projects": {
-    "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj": {
+    "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj",
+        "projectUniqueName": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj",
         "projectName": "ProductController",
-        "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj",
-        "packagesPath": "C:\\Users\\Luv_River\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\obj\\",
+        "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\ProductController.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductController\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luv_River\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
-                "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj"
+              "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
+                "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj"
               },
-              "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj": {
-                "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj"
+              "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj": {
+                "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj"
               }
             }
           }
@@ -50,13 +50,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -105,24 +110,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
+    "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj",
+        "projectUniqueName": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj",
         "projectName": "ProductRepository",
-        "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj",
-        "packagesPath": "C:\\Users\\Luv_River\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\obj\\",
+        "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luv_River\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -148,13 +153,18 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.10, )"
@@ -186,24 +196,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj": {
+    "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj",
+        "projectUniqueName": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj",
         "projectName": "ProductService",
-        "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj",
-        "packagesPath": "C:\\Users\\Luv_River\\.nuget\\packages\\",
-        "outputPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\obj\\",
+        "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\ProductService.csproj",
+        "packagesPath": "C:\\Users\\hoang\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luv_River\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hoang\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -219,8 +229,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
-                "projectPath": "E:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj"
+              "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj": {
+                "projectPath": "D:\\Code\\C#\\ProductManager\\ProductManager\\ProductRepository\\ProductRepository.csproj"
               }
             }
           }
@@ -233,12 +243,19 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -255,7 +272,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

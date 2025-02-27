@@ -59,39 +59,19 @@ namespace YourWebApi.Controllers
 
         // PUT: api/product/{id}
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] GetProductDTO request)
+        public async Task<IActionResult> UpdateProduct([FromRoute] int id, [FromBody] UpdateProductDTO request)
         {
-            // Tìm sản phẩm trong cơ sở dữ liệu
-            var existingProduct = await _productService.GetProductByIdAsync(id);
-            if (existingProduct == null)
-            {
-                return NotFound($"Product with ID {id} not found.");
-            }
+            var result = await _productService.UpdateProductAsync(id, request);
 
-            // Cập nhật các trường dữ liệu của sản phẩm
-            existingProduct.Name = request.Name;
-            existingProduct.Description = request.Description;
-            existingProduct.Price = request.Price;
-            existingProduct.UpdatedTime = DateTime.UtcNow; // Cập nhật thời gian sửa
-
-            // Lưu thay đổi vào cơ sở dữ liệu
-            await _productService.UpdateProductAsync(existingProduct);
-
-            return NoContent(); // Trả về trạng thái thành công mà không cần dữ liệu
+            return Ok(result); // Trả về trạng thái thành công mà không cần dữ liệu
         }
 
         // DELETE: api/product/{id}
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProduct([FromRoute]int id)
         {
-            var existingProduct = await _productService.GetProductByIdAsync(id);
-            if (existingProduct == null)
-            {
-                return NotFound($"Product with ID {id} not found.");
-            }
-
-            await _productService.DeleteProductAsync(id);  // Assuming a method to delete product
-            return NoContent();  // 204 No Content indicates successful deletion
+            var result = await _productService.DeleteProductAsync(id);  // Assuming a method to delete product
+            return Ok(result);  // 204 No Content indicates successful deletion
         }
     }
 }

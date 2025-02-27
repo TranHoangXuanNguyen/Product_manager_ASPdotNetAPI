@@ -10,7 +10,7 @@ namespace ProductRepository.DbContextFactory
             var optionsBuilder = new DbContextOptionsBuilder<ProductDBContext>();
 
             // Specify your connection string here
-            optionsBuilder.UseSqlServer("Server=DESKTOP-L7F9546\\SQLEXPRESS;Database=ProductDB;Trusted_Connection=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-K0G7JLN\\SQLEXPRESS;Database=ProductDB;Trusted_Connection=True;TrustServerCertificate=True");
 
             return new ProductDBContext(optionsBuilder.Options);
         }

@@ -29,12 +29,12 @@ namespace ProductService.Services
             productEntity.CreatedTime = DateTime.Now;
             productEntity.UpdatedTime = null;
             return await _productRepository.AddProductAsync(productEntity);
-            
+
         }
 
         public async Task<List<ProductDTO>> GetAllProductsAsync()
         {
-            var listProductEntity =  await _productRepository.GetAllProductsAsync();
+            var listProductEntity = await _productRepository.GetAllProductsAsync();
             return listProductEntity.Select(x => new ProductDTO
             {
                 Name = x.Name,
@@ -47,28 +47,44 @@ namespace ProductService.Services
         {
             var getProductDTO = new GetProductDTO();
             var entityFormDB = await _productRepository.GetProductByIdAsync(id);
-            getProductDTO.Id = id;
-            getProductDTO.Name = entityFormDB.Name;
-            getProductDTO.Description = entityFormDB.Description;
-            getProductDTO.Price = entityFormDB.Price;
-            getProductDTO.UpdatedTime = entityFormDB.UpdatedTime;
+            if (entityFormDB != null)
+            {
+                getProductDTO.Id = id;
+                getProductDTO.Name = entityFormDB.Name;
+                getProductDTO.Description = entityFormDB.Description;
+                getProductDTO.Price = entityFormDB.Price;
+                getProductDTO.UpdatedTime = entityFormDB.UpdatedTime;
+            }
+
             return getProductDTO;
         }
 
-        public async Task UpdateProductAsync(GetProductDTO request)
+        public async Task<bool> UpdateProductAsync(int id, UpdateProductDTO request)
         {
-            var productEntity = new ProductEntity();
-            productEntity.Id = request.Id;
-            productEntity.Name = request.Name;
-            productEntity.Description = request.Description;
-            productEntity.Price = request.Price;
-            productEntity.UpdatedTime = DateTime.Now;
-            await _productRepository.UpdateProductAsync(productEntity);
+            // Tìm sản phẩm trong cơ sở dữ liệu
+            var existingProduct = await _productRepository.GetProductByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new Exception($"product not existing with id : {id}");
+            }
+            // Cập nhật các trường dữ liệu của sản phẩm
+            existingProduct.Name = request.Name;
+            existingProduct.Description = request.Description;
+            existingProduct.Price = request.Price;
+            existingProduct.UpdatedTime = DateTime.Now;
+
+
+            return await _productRepository.UpdateProductAsync(existingProduct);
         }
 
-        public async Task DeleteProductAsync(int id)
+        public async Task<bool> DeleteProductAsync(int id)
         {
-            await _productRepository.DeleteProductAsync(id);
+            var existingProduct = await _productRepository.GetProductByIdAsync(id);
+            if (existingProduct == null)
+            {
+                throw new Exception($"product not existing with id : {id}");
+            }
+            return await _productRepository.DeleteProductAsync(id);
         }
     }
 

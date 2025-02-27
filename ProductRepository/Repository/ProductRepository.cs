@@ -30,22 +30,20 @@ namespace ProductRepository.Repository
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<ProductEntity> GetProductByIdAsync(int id)
-        {   
-            var productEntityResult = await _context.Products.FindAsync(id);
-            if (productEntityResult == null) {
-                throw new KeyNotFoundException($"Product with ID {id} was not found.");
-            }
-            return productEntityResult;
-        }
-
-        public async Task UpdateProductAsync(ProductEntity product)
+        public async Task<ProductEntity>? GetProductByIdAsync(int id)
         {
-            _context.Products.Update(product);
-            await _context.SaveChangesAsync();
+            return await _context.Products.FindAsync(id);
+
         }
 
-        public async Task DeleteProductAsync(int id)
+        public async Task<bool> UpdateProductAsync(ProductEntity product)
+        {
+            var Updatedproduct = _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+            return Updatedproduct != null;
+        }
+
+        public async Task<bool> DeleteProductAsync(int id)
         {
             var product = await _context.Products.FindAsync(id);
             if (product != null)
@@ -53,6 +51,7 @@ namespace ProductRepository.Repository
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
             }
+            return true;
         }
     }
 

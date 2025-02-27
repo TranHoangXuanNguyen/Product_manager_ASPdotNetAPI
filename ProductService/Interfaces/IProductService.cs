@@ -13,7 +13,7 @@ namespace ProductService.Interfaces
         Task<long> CreateProductAsync(CreateProductDTO product);
         Task<List<ProductDTO>> GetAllProductsAsync();
         Task<GetProductDTO> GetProductByIdAsync(int id);
-        Task UpdateProductAsync(GetProductDTO product);
-        Task DeleteProductAsync(int id); 
+        Task<bool> UpdateProductAsync(int id, UpdateProductDTO request);
+        Task<bool> DeleteProductAsync(int id); 
     }
 }

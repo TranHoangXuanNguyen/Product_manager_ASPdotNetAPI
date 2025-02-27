@@ -76,7 +76,7 @@
       },
       {
         "Name": "request",
-        "Type": "ProductService.Models.GetProductDTO",
+        "Type": "ProductService.Models.UpdateProductDTO",
         "IsRequired": true
       }
     ],

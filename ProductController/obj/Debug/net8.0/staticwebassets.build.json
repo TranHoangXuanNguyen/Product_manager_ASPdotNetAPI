@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "LsAAEw+rCr/ydW1wIEOlvMd4+r8Qnq0q6AZMLk9B+xM=",
+  "Hash": "wcTT5oqz7UGmJoIRiWuJkFpQjbUGVd1tbYaI12xkZY4=",
   "Source": "ProductController",
   "BasePath": "_content/ProductController",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

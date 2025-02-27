@@ -11,8 +11,8 @@ namespace ProductRepository.Interfaces
     {
         Task<long> AddProductAsync(ProductEntity productEntity);
         Task<List<ProductEntity>> GetAllProductsAsync();
-        Task<ProductEntity> GetProductByIdAsync(int id);
-        Task UpdateProductAsync(ProductEntity product);
-        Task DeleteProductAsync(int id);
+        Task<ProductEntity>? GetProductByIdAsync(int id);
+        Task<bool> UpdateProductAsync(ProductEntity product);
+        Task<bool> DeleteProductAsync(int id);
     }
 }

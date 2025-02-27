@@ -1,17 +1,44 @@
-
+﻿
 
 using Microsoft.EntityFrameworkCore;
 using ProductRepository;
 using ProductRepository.Interfaces;
 using ProductService.Interfaces;
 
+//test fix 
+
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+// close
+
+
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
+builder.Services.AddControllers();
+
+
+
 
 // Add services to the container.
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<ProductDBContext>(options =>
-            options.UseSqlServer("Server=DESKTOP-L7F9546\\SQLEXPRESS;Database=ProductDB;Trusted_Connection=True;TrustServerCertificate=True"));
+            options.UseSqlServer("Server=DESKTOP-K0G7JLN\\SQLEXPRESS;Database=ProductDB;Trusted_Connection=True;TrustServerCertificate=True"));
 
 builder.Services.AddScoped<IProductService, ProductService.Services.ProductService>();
 builder.Services.AddScoped<IProductRepository, ProductRepository.Repository.ProductRepository>();
@@ -50,6 +77,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Áp dụng CORS
+app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -57,3 +87,15 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+
+
+
+
+//test
+
+
+
+
+//end
